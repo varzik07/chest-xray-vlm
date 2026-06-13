@@ -1,0 +1,31 @@
+# Data (regenerate with src/prepare_data.py; images come from the IU dataset)
+data/images/
+data/*.tgz
+data/Thumbs.db
+data/*.jsonl
+data/ecgen-radiology/
+
+# Downloaded base models (re-download with src/download_model.py)
+models/
+
+# Training outputs (checkpoints/logs); keep only the small LoRA adapter + metrics
+outputs/*.pt
+outputs/*.log
+outputs/*.txt
+outputs/predictions*.jsonl
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Claude Code project tooling (local only — not part of the project)
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

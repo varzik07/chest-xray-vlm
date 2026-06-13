@@ -1,0 +1,30 @@
+# PyTorch (install separately, matched to your CUDA; this project used cu121):
+#   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
+
+# --- Hugging Face stack (pinned to a Windows-stable, mutually-compatible set) ---
+transformers==4.49.0
+huggingface_hub<1.0          # 1.x switched to httpx, which segfaulted on this Windows box
+tokenizers>=0.21,<0.22
+peft>=0.15
+trl<0.14
+accelerate>=1.0
+datasets<4
+bitsandbytes>=0.44           # 4-bit QLoRA (GPU only)
+sentencepiece
+
+# --- Vision (Phase 1 baseline + v3 CheXNet encoder) ---
+timm>=1.0
+torchxrayvision        # CheXNet medical DenseNet encoder (v3)
+pillow
+
+# --- Evaluation metrics ---
+nltk>=3.9                     # <3.9 BLEU breaks on Python 3.12
+rouge-score
+
+# --- Demo ---
+gradio>=4.0
+
+# --- Utils ---
+tqdm
+pandas
+scikit-learn
